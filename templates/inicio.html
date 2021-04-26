@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Inicio</title>
+    </head>
+    <body>
+        <h1>Antonio Castro Díaz</h1>
+        <h2>Biblioteca</h2>
+        <ul>
+            {% for elem in libros %}
+                {% if elem.isbn %}
+                    <li><a href="/libro/{{elem.isbn}}">{{elem.title}}</a></li>
+                {% else %}
+                    <li><a href="/">{{elem.title}} (No tiene ISBN)</a></li>
+                {% endif %}
+                <br>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
